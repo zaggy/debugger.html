@@ -302,10 +302,9 @@ const Editor = React.createClass({
   },
 
   updateQuery(query) {
-    if (this.state.query == "" && query == "") {
+    if (this.state.query == query) {
       return;
     }
-
     this.setState({ query });
   },
 

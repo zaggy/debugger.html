@@ -126,7 +126,6 @@ const SearchBar = React.createClass({
     const { editor: ed, query, modifiers } = this.props;
     if (ed) {
       const ctx = { ed, cm: ed.codeMirror };
-      this.props.updateQuery("");
       removeOverlay(ctx, query, modifiers);
     }
   },
@@ -159,7 +158,9 @@ const SearchBar = React.createClass({
     if (this.state.enabled && editor) {
       const selection = editor.codeMirror.getSelection();
       this.setSearchValue(selection);
-      this.doSearch(selection);
+      if (selection !== "") {
+        this.doSearch(selection);
+      }
       this.selectSearchInput();
     }
   },
