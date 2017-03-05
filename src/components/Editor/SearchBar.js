@@ -509,8 +509,8 @@ const SearchBar = React.createClass({
         onKeyDown: this.onKeyDown,
         handleClose: this.closeSearch
       }),
-      this.renderBottomBar(),
-      this.renderResults()
+      this.renderResults(),
+      this.renderBottomBar()
     );
   }
 });
