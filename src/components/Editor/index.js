@@ -361,7 +361,8 @@ const Editor = React.createClass({
     });
 
     this.cbPanel = this.editor.codeMirror.addLineWidget(line, panel, {
-      coverGutter: true
+      coverGutter: true,
+      noHScroll: true
     });
     this.cbPanel.node.querySelector("input").focus();
   },
